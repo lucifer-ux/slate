@@ -1,0 +1,80 @@
+
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.cardWrapper {
+display: flex;
+flex-direction: row;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.fadeOut {
+    color: #ffffff;
+    font-size: large;
+    font-family: helvetica;
+    text-align: center;
+    opacity: 0;
+    -webkit-animation: fadeout 4s;
+    -moz-animation: fadeout 4s;
+    -ms-animation: fadeout 4s;
+    -o-animation: fadeout 4s;
+    animation: fadeout 4s;
+}
+
+@keyframes fadeout {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+.widthWrapper{
+  display: flex;
+  flex-direction: row;
+  width:  100%;
+  justify-content: space-between;
+}
+.heightWrapper{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 24%;
+  /* flex-wrap: wrap; */
+  justify-content: space-between;
+}
+.main-content{
+  margin-left: 250px;
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}

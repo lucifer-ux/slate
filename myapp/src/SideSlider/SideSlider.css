@@ -1,0 +1,58 @@
+.sidebar {
+    width: 200px;
+    /* background: linear-gradient(180deg, #1a1a1a, #101010); */
+    height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    color: #fff;
+    position: fixed;
+    overflow-y: auto;
+    margin-top: 60px;
+  }
+  
+  .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .menu-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #bbb;
+    transition: color 0.3s, transform 0.3s;
+  }
+  
+  .menu-item .icon {
+    font-size: 20px;
+  }
+  
+  .menu-item:hover {
+    color: #fff;
+    transform: translateX(10px);
+  }
+  
+  .menu-item.active {
+    color: orange;
+    font-weight: bold;
+    position: relative;
+  }
+  
+  .menu-item.active::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 3px;
+    background: orange;
+    left: -10px;
+  }
+  
+  .bottom-menu {
+    margin-top: auto;
+  }
+  

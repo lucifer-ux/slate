@@ -1,0 +1,133 @@
+
+.carousel {
+    position: relative;
+    width: 80%;
+    max-width: 900px;
+    margin: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #29151c;
+    overflow-y: auto;
+    top: 8%;
+    flex: 1 1 60%;
+  }
+  
+  .carousel-slide {
+    height: 500px;
+    width: 800px;
+    /* background-size: cover; */
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    color: white;
+    padding: 20px;
+  }
+  
+  .carousel-overlay {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 20px;
+  }
+  
+  .tags {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .tag {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+  }
+  
+  .add-tag {
+    background: rgba(255, 165, 0, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .carousel-title {
+    font-size: 48px;
+    margin: 0;
+    font-weight: bold;
+  }
+  
+  .friends {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .friend-avatars {
+    display: flex;
+  }
+  
+  .friend-avatar {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-right: -10px;
+  }
+  
+  .friends-count {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+  }
+  
+  .dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+  }
+  
+  .dot.active {
+    background: #fe6a26;
+    width: 5%;
+    height: 0.4rem;
+    border-radius: 24%;
+    margin-top: 2px;
+  }
+  
+  .prev-slide,
+  .next-slide {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  
+  .prev-slide {
+    left: 10px;
+  }
+  
+  .next-slide {
+    right: 10px;
+  }
+  

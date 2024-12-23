@@ -1,0 +1,85 @@
+.card {
+  width: 300px;
+  height: 200px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  perspective: 1000px;
+  position: relative;
+  transition: transform 0.3s ease;
+  margin-top: 24px;
+}
+
+.card.active {
+  transform: translateY(-20px);
+}
+
+.card-image {
+  overflow: hidden;
+  transition: transform 0.5s ease-out;
+}
+.card-image img {
+  object-fit: cover;
+}
+
+.buttons {
+  position: absolute;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transform-style: preserve-3d;
+  transition: opacity 0.3s, transform 0.3s ease;
+}
+
+.buttons.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(20px) rotateX(0deg);
+  animation: shake 0.5s ease-in-out;
+}
+
+.action-button {
+  width: 100px;
+  height: 40px;
+  background: #ff6347;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  transform: rotateX(180deg);
+  transition: transform 0.5s ease;
+  font-size: 16px;
+}
+
+.buttons.visible .action-button {
+  transform: rotateX(0deg);
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(20px) rotateX(0deg) rotateZ(0deg);
+  }
+  25% {
+    transform: translateX(-48%) translateY(22px) rotateX(0deg) rotateZ(-2deg);
+  }
+  50% {
+    transform: translateX(-52%) translateY(18px) rotateX(0deg) rotateZ(2deg);
+  }
+  75% {
+    transform: translateX(-48%) translateY(20px) rotateX(0deg) rotateZ(-1deg);
+  }
+}
+
+.card-image:hover {
+  transform: rotateX(12deg) rotateY(12deg);
+  transition: transform 0.5s ease-out;
+}

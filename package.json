@@ -1,0 +1,54 @@
+{
+  "name": "slatee",
+  "version": "0.0.1",
+  "description": "electron app",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "build": "electron-builder",
+    "dist-all": "electron-builder --win --x64"
+  },
+  "keywords": [
+    "electron",
+    "react",
+    "js",
+    "typescript"
+  ],
+  "author": "lucifer",
+  "license": "ISC",
+  "dependencies": {
+    "icns": "^0.1.0",
+    "sharp": "^0.33.5",
+    "systeminformation": "^5.23.5"
+  },
+
+  "build": {
+    "appId": "com.example.myelectronapp",
+    "productName": "My Electron App",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+    "build"
+    ],
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "win": {
+      "target": ["nsis", "portable"]
+    },
+    "linux": {
+      "target": ["AppImage", "deb"]
+    }
+  },
+
+  "devDependencies": {
+    "electron-builder": "^25.1.8",
+    "electron-reload": "^2.0.0-alpha.1",
+    "electron-reloader": "^1.2.3",
+    "electron": "^32.0.1",
+    "electron-icns-ex": "^1.0.1"
+  }
+}

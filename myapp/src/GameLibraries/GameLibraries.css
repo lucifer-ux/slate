@@ -1,0 +1,10 @@
+.cardWrapper{
+    margin-top: 20px;
+    margin-left: 12px;
+}
+.closewebview{
+    color: #FFFFFF;
+}
+.closewebview:hover{
+    cursor: pointer;
+}
