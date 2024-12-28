@@ -25,9 +25,9 @@ function createWindow() {
       webviewTag: true,
     },
   });
-  // mainWindow.webContents.openDevTools();
-  
-  mainWindow.loadURL(`file://${path.join(__dirname, 'myapp', 'build', 'index.html')}`);
+  mainWindow.webContents.openDevTools();
+  mainWindow.loadURL('http://localhost:3000/')
+  // mainWindow.loadURL(`file://${path.join(__dirname, 'myapp', 'build', 'index.html')}`);
 }
 
 ipcMain.handle("close-webview", async () => {
@@ -80,6 +80,10 @@ ipcMain.handle("fetch-game-data", async (event, gameName) => {
     console.error("Error fetching game data:", error);
     throw new Error("Failed to fetch game data");
   }
+});
+
+ipcMain.on("gamepad-action", (event, action) => {
+  console.log("Received action:", action); // Process gamepad actions
 });
 
 app.whenReady().then(createWindow);

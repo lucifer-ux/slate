@@ -27,4 +27,19 @@ contextBridge.exposeInMainWorld('electron', {
   fetchGameData: (gameName) => ipcRenderer.invoke("fetch-game-data", gameName),
   openWebview: (url) => ipcRenderer.invoke('open-webview', url),
   closeWebview: () => ipcRenderer.invoke('close-webview'),
+
+});
+
+contextBridge.exposeInMainWorld('gamepadAPI', {
+  getGamepads: () => navigator.getGamepads(), // Returns the current gamepads
+  onGamepadConnected: (callback) => {
+    window.addEventListener('gamepadconnected', (event) => {
+      callback(event.gamepad);
+    });
+  },
+  onGamepadDisconnected: (callback) => {
+    window.addEventListener('gamepaddisconnected', (event) => {
+      callback(event.gamepad);
+    });
+  },
 });
