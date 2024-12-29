@@ -20,9 +20,9 @@
   "dependencies": {
     "icns": "^0.1.0",
     "sharp": "^0.33.5",
-    "systeminformation": "^5.23.5"
+    "systeminformation": "^5.23.5",
+    "xinput": "^0.5.0"
   },
-
   "build": {
     "appId": "com.example.myelectronapp",
     "productName": "My Electron App",
@@ -31,24 +31,29 @@
     },
     "files": [
       "**/*",
-    "build"
+      "build"
     ],
     "mac": {
       "category": "public.app-category.utilities"
     },
     "win": {
-      "target": ["nsis", "portable"]
+      "target": [
+        "nsis",
+        "portable"
+      ]
     },
     "linux": {
-      "target": ["AppImage", "deb"]
+      "target": [
+        "AppImage",
+        "deb"
+      ]
     }
   },
-
   "devDependencies": {
-    "electron-builder": "^25.1.8",
-    "electron-reload": "^2.0.0-alpha.1",
-    "electron-reloader": "^1.2.3",
     "electron": "^32.0.1",
-    "electron-icns-ex": "^1.0.1"
+    "electron-builder": "^25.1.8",
+    "electron-icns-ex": "^1.0.1",
+    "electron-reload": "^2.0.0-alpha.1",
+    "electron-reloader": "^1.2.3"
   }
 }
