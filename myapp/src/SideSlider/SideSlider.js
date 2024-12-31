@@ -12,6 +12,26 @@ const SideSlider = ({ setActiveComponent }) => {
     return () => clearInterval(interval);
   }, [activeEleemnt]);
 
+  setInterval(async () => {
+    const state = await window.gamepadAPI.getXInputState();
+    if (state) {
+      console.log('Controller State:', state);
+      if (state.buttons.A) {
+        console.log('A button pressed');
+      }
+    } else {
+      console.log('No controller connected');
+    }
+  }, 100);
+  
+  // Fetch HID devices
+  async function fetchHIDDevices() {
+    const devices = await window.gamepadAPI.getHIDDevices();
+    console.log('Connected HID devices:', devices);
+  }
+  
+  fetchHIDDevices();
+  
   const pollGamepad = () => {
     const gamepads = navigator.getGamepads();
     if (!gamepads) return;

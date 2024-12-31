@@ -86,6 +86,26 @@ ipcMain.on("gamepad-action", (event, action) => {
   console.log("Received action:", action); // Process gamepad actions
 });
 
+ipcMain.handle('get-xinput-state', (event) => {
+  try {
+    const state = xinput.getState(0); // Get controller state for index 0
+    return state ? state : null; // Return state or null if no controller
+  } catch (err) {
+    console.error('Error fetching XInput state:', err);
+    return null; // Return null in case of error
+  }
+});
+
+ipcMain.handle('get-hid-devices', async () => {
+  try {
+    const devices = await navigator.hid.getDevices(); // Returns connected HID devices
+    return devices;
+  } catch (err) {
+    console.error('Error fetching HID devices:', err);
+    return [];
+  }
+});
+
 app.whenReady().then(createWindow);
 
 app.on("window-all-closed", () => {

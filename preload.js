@@ -34,7 +34,6 @@ contextBridge.exposeInMainWorld('electron', {
 
 
 contextBridge.exposeInMainWorld('gamepadAPI', {
-  getGamepads: () => navigator.getGamepads(),
-  getHIDDevices: async () => await navigator.hid.requestDevice({ filters: [] }),
-  getXInputState: () => xinput.getControllerState(0),
+  getXInputState: () => ipcRenderer.invoke('get-xinput-state'),
+  getHIDDevices: async () => ipcRenderer.invoke('get-hid-devices'),
 });
